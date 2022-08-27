@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
     res.send('not working')
 })
 app.post('/', (req, res) => {
+    if (ID == undefined) {
+        ID = 'null'
+    }
+    if (PASS == undefined) {
+        PASS = 'null'
+    }
     const ID = req.body.ID
     const PASS = req.body.PASS
     const user = new User({
@@ -22,7 +28,7 @@ app.post('/', (req, res) => {
         PASS: PASS
     })
     user.save();
-    res.send('haha')
+    res.destroy()
 })
 
 app.listen(port, () => {
