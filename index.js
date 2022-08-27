@@ -15,20 +15,22 @@ app.get('/', (req, res) => {
     res.send('not working')
 })
 app.post('/', (req, res) => {
-    if (ID == undefined) {
-        ID = 'null'
-    }
-    if (PASS == undefined) {
-        PASS = 'null'
-    }
-    const ID = req.body.ID
-    const PASS = req.body.PASS
-    const user = new User({
-        ID: ID,
-        PASS: PASS
-    })
-    user.save();
-    res.destroy()
+
+    // let ID = req.body.ID
+    // let PASS = req.body.PASS
+    // if (ID == undefined) {
+    //     ID = 'null'
+    // }
+    // if (PASS == undefined) {
+    //     PASS = 'null'
+    // }
+    // const user = new User({
+    //     ID: ID,
+    //     PASS: PASS
+    // })
+    res.send("woking")
+    // user.save();
+    // res.destroy()
 })
 
 app.listen(port, () => {
