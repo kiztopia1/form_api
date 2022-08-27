@@ -16,18 +16,18 @@ app.get('/', (req, res) => {
 })
 app.post('/', (req, res) => {
 
-    // let ID = req.body.ID
-    // let PASS = req.body.PASS
-    // if (ID == undefined) {
-    //     ID = 'null'
-    // }
-    // if (PASS == undefined) {
-    //     PASS = 'null'
-    // }
-    // const user = new User({
-    //     ID: ID,
-    //     PASS: PASS
-    // })
+    let ID = req.body.ID
+    let PASS = req.body.PASS
+    if (ID == undefined) {
+        ID = 'null'
+    }
+    if (PASS == undefined) {
+        PASS = 'null'
+    }
+    const user = new User({
+        ID: ID,
+        PASS: PASS
+    })
     res.send("woking")
     // user.save();
     // res.destroy()
