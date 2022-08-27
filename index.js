@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     const ID = req.body.ID
     const PASS = req.body.PASS
-    console.log(req.body)
     const user = new User({
         ID: ID,
         PASS: PASS
