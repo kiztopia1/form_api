@@ -28,8 +28,8 @@ app.post('/', (req, res) => {
         ID: ID,
         PASS: PASS
     })
+    user.save();
     res.send("woking")
-    // user.save();
     // res.destroy()
 })
 
