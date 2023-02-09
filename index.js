@@ -11,7 +11,7 @@ const dbURI = 'mongodb+srv://kira:QEqcyn4hpCWHVIvR@cluster0.dakub.mongodb.net/?r
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
-    res.send('not working')
+    res.send('working')
 })
 app.post('/', (req, res) => {
 
